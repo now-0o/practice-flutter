@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webtoon_flutter/services/api_service.dart';
 import 'screens/home_screen.dart'; // HomeScreen 파일 import
 
 void main() {
@@ -11,7 +10,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: HomeScreen(),
     );
   }
