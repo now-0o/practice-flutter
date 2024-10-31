@@ -37,6 +37,10 @@ class _AppState extends State<App> {
     if (min == 0 && second == 0) {
       setState(() {
         round++;
+        if (round == 4) {
+          round = 0;
+          goal++;
+        }
         isRunning = false;
         min = 5 * (selectedIndex + 1);
       });
@@ -105,7 +109,7 @@ class _AppState extends State<App> {
                 ),
               ),
               const SizedBox(
-                height: 200,
+                height: 160,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -213,7 +217,7 @@ class _AppState extends State<App> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               Row(
                 children: [
@@ -242,8 +246,22 @@ class _AppState extends State<App> {
                   Expanded(
                     child: Column(
                       children: [
-                        Text('$goal/12'),
-                        const Text("GOAL"),
+                        Text(
+                          '$goal/12',
+                          style: const TextStyle(
+                            color: Colors.white60,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 30,
+                          ),
+                        ),
+                        const Text(
+                          "GOAL",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          ),
+                        ),
                       ],
                     ),
                   )
